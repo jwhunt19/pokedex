@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import * as pokeAPI from "./services/pokeApi";
 
+import Pokemon from "./components/pokemon/Pokemon";
+
 function App() {
   const [pokemon, setPokemon] = useState({});
   const [input, setInput] = useState("");
@@ -28,18 +30,7 @@ function App() {
         onChange={handleInput}
       ></input>
       <button onClick={search}>search</button>
-      {pokemon.name ? (
-        <>
-          <p>{`id: ${pokemon.id}\n`}</p>
-          <p>{`name: ${pokemon.name}`}</p>
-          <img src={pokemon.sprite} alt={`sprite for ${pokemon.name}`} />
-          <p>{`types: ${pokemon.types.join(", ")}`}</p>
-          <p>{`stats: ${JSON.stringify(pokemon.stats)}`}</p>
-          <p>{`abilities: ${pokemon.abilities.join(", ")}`}</p>
-        </>
-      ) : (
-        ""
-      )}
+      {pokemon.id ? <Pokemon pokemon={pokemon} /> : ""}
     </div>
   );
 }
