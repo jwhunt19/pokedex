@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import * as pokeAPI from "./services/pokeApi";
 
 import Pokemon from "./components/pokemon/Pokemon";
+import Search from "./components/search/Search";
 
 function App() {
   const [pokemon, setPokemon] = useState({});
-  const [input, setInput] = useState("");
 
   useEffect(() => {
     if (!pokemon.id) {
@@ -13,23 +13,9 @@ function App() {
     }
   });
 
-  const handleInput = (e) => {
-    setInput(e.target.value);
-  };
-
-  const search = () => {
-    pokeAPI.getPokemon(input).then((data) => setPokemon(data));
-  };
-
   return (
     <div className="App">
-      <input
-        type="text"
-        placeholder="enter id or name"
-        value={input}
-        onChange={handleInput}
-      ></input>
-      <button onClick={search}>search</button>
+      <Search setPokemon={setPokemon} />
       {pokemon.id ? <Pokemon pokemon={pokemon} /> : ""}
     </div>
   );

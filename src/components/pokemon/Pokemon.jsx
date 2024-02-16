@@ -2,7 +2,7 @@ import Stat from './Stat';
 
 const Pokemon = ({ pokemon }) => {
   return (
-    <div>
+    <div id='pokemon'>
       <p>{`id: ${pokemon.id}\n`}</p>
       <p>{`name: ${pokemon.name}`}</p>
       <img src={pokemon.sprite} alt={`sprite for ${pokemon.name}`} />
