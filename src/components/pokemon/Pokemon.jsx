@@ -1,10 +1,11 @@
 import Stat from './Stat';
+import formatString from "../../utils/formatString";
 
 const Pokemon = ({ pokemon }) => {
   return (
     <div id='pokemon'>
       <p>{`id: ${pokemon.id}\n`}</p>
-      <p>{`name: ${pokemon.name}`}</p>
+      <p>{`name: ${formatString(pokemon.name)}`}</p>
       <img src={pokemon.sprite} alt={`sprite for ${pokemon.name}`} />
       <p>{`types: ${pokemon.types.join(", ")}`}</p>
       {
