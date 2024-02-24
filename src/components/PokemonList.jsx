@@ -3,7 +3,7 @@ const PokemonList = ({ pokemonList }) => {
     <div>
       <ul>
         {pokemonList.map((pokemon, index) => (
-          <li key={index}>{pokemon.name}</li>
+          <li key={index}>{pokemon}</li>
         ))}
       </ul>
     </div>

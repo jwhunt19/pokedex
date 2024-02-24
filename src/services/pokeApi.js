@@ -25,4 +25,17 @@ const getPokemonByNameId = async (id) => {
   }
 };
 
-export { getPokemonByNameId };
+const getPokemonByType = async (type) => {
+  try {
+    const { data } = await axios.get(`https://pokeapi.co/api/v2/type/${type}`);
+
+    return data.pokemon.map((poke) => {
+      return poke.pokemon.name;
+    });
+  } catch (err) {
+    console.error(err);
+    return {};
+  }
+};
+
+export { getPokemonByNameId, getPokemonByType };

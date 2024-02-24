@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as pokeAPI from "../../services/pokeApi";
 import * as search from "../../utils/search";
 
-const Search = ({ setPokemon }) => {
+const Search = ({ setPokemon, setPokemonList }) => {
   const [input, setInput] = useState("");
   const [searchOption, setSearchOption] = useState("name/id");
   const [error, setError] = useState("");
@@ -27,7 +27,8 @@ const Search = ({ setPokemon }) => {
         break;
       case "type":
         search.type(input)
-          .then((data) => setPokemon(data))
+          .then((data) => setPokemonList(data))
+          .then(() => setPokemon({}))
           .catch((err) => handleError(err));
         break;
       default:
