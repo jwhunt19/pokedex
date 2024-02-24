@@ -5,7 +5,7 @@ const formatString = (str) => {
   }
 
   // Replace all dashes with spaces
-  let stringWithSpaces = str.replace(/-/g, " ");
+  let stringWithSpaces = str.replace(/-/g, " "); // TODO: add edge case check eg. "ho-oh" -> "Ho-oh"
 
   // Capitalize the first letter of each word
   let capitalizedString = stringWithSpaces.replace(/\b\w/g, function (char) {

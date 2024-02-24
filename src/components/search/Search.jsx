@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as pokeAPI from "../../services/pokeApi";
+import * as search from "../../utils/search";
 
 const Search = ({ setPokemon }) => {
   const [input, setInput] = useState("");
@@ -16,13 +17,22 @@ const Search = ({ setPokemon }) => {
     setTimeout(() => setError(""), 3000);
   };
 
-  const search = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
-    const query = searchOption === "generation" ? generation : input;
-    pokeAPI
-      .getPokemon(query)
-      .then((data) => setPokemon(data))
-      .catch((err) => handleError(err));
+    switch (searchOption) {
+      case "name/id":
+        search.nameId(input)
+          .then((data) => setPokemon(data))
+          .catch((err) => handleError(err));
+        break;
+      case "type":
+        search.type(input)
+          .then((data) => setPokemon(data))
+          .catch((err) => handleError(err));
+        break;
+      default:
+        console.log("searchOption not found");
+    }
   };
 
   return (
@@ -65,7 +75,7 @@ const Search = ({ setPokemon }) => {
           <option value="ability">Ability</option>
           <option value="generation">Generation</option>
         </select>
-        <button type="submit" onClick={search}>
+        <button type="submit" onClick={handleSearch}>
           search
         </button>
       </form>

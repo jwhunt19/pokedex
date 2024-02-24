@@ -1,8 +1,7 @@
 import * as pokeApiUtils from "../utils/pokeApiUtils.js";
 import axios from "axios";
 
-const getPokemon = async (id) => {
-  if (id.replace(/\s/g, "") === "") return {}; // TODO: replace spaces with dashes but catch empty strings
+const getPokemonByNameId = async (id) => {
   if (localStorage.getItem(id)) {
     return JSON.parse(localStorage.getItem(id));
   } else {
@@ -26,4 +25,4 @@ const getPokemon = async (id) => {
   }
 };
 
-export { getPokemon };
+export { getPokemonByNameId };
