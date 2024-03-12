@@ -56,4 +56,28 @@ const getPokemonByAbility = async (ability) => {
   }
 };
 
-export { getPokemonByNameId, getPokemonByType, getPokemonByAbility };
+const getPokemonByGeneration = async (generation) => {
+  try {
+    const { data } = await axios.get(
+      `https://pokeapi.co/api/v2/generation/${generation}`
+    );
+    data.pokemon_species.sort(
+      (a, b) => a.url.slice(42, -1) - b.url.slice(42, -1)
+    );
+    return data.pokemon_species.map((pokemon) => pokemon);
+  } catch (err) {
+    if (err.response.status === 404) {
+      throw new Error("Generation not found");
+    } else {
+      console.error(err);
+      return {};
+    }
+  }
+};
+
+export {
+  getPokemonByNameId,
+  getPokemonByType,
+  getPokemonByAbility,
+  getPokemonByGeneration,
+};

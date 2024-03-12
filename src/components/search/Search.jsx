@@ -40,6 +40,13 @@ const Search = ({ setPokemon, setPokemonList }) => {
           .then(() => setPokemon({}))
           .catch((err) => handleError(err));
         break;
+      case "generation":
+        search
+          .generation(generation)
+          .then((data) => setPokemonList(data))
+          .then(() => setPokemon({}))
+          .catch((err) => handleError(err));
+        break;
       default:
         console.log("searchOption not found");
     }

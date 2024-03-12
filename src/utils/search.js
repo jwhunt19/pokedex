@@ -42,14 +42,22 @@ const type = async (type) => {
   }
 };
 
-const ability = (ability) => {
+const ability = async (ability) => {
   ability = ability.toLowerCase();
   ability = ability.replace(/ /g, "-");
 
-  const data = pokeAPI.getPokemonByAbility(ability);
+  const data = await pokeAPI.getPokemonByAbility(ability);
   return data;
 };
 
-const generation = (generation) => {};
+const generation = async (generation) => {
+  generation = parseInt(generation);
+  if (generation > 0 && generation < 10) {
+    const data = await pokeAPI.getPokemonByGeneration(generation);
+    return data;
+  } else {
+    throw new Error("Generation not found");
+  }
+};
 
 export { nameId, type, ability, generation };
