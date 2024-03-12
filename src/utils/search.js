@@ -42,7 +42,13 @@ const type = async (type) => {
   }
 };
 
-const ability = (ability) => {};
+const ability = (ability) => {
+  ability = ability.toLowerCase();
+  ability = ability.replace(/ /g, "-");
+
+  const data = pokeAPI.getPokemonByAbility(ability);
+  return data;
+};
 
 const generation = (generation) => {};
 

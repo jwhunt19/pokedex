@@ -20,12 +20,22 @@ const Search = ({ setPokemon, setPokemonList }) => {
     e.preventDefault();
     switch (searchOption) {
       case "name/id":
-        search.nameId(input)
+        search
+          .nameId(input)
           .then((data) => setPokemon(data))
+          .then(() => setPokemonList([]))
           .catch((err) => handleError(err));
         break;
       case "type":
-        search.type(input)
+        search
+          .type(input)
+          .then((data) => setPokemonList(data))
+          .then(() => setPokemon({}))
+          .catch((err) => handleError(err));
+        break;
+      case "ability":
+        search
+          .ability(input)
           .then((data) => setPokemonList(data))
           .then(() => setPokemon({}))
           .catch((err) => handleError(err));

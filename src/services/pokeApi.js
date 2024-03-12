@@ -28,12 +28,32 @@ const getPokemonByNameId = async (id) => {
 const getPokemonByType = async (type) => {
   try {
     const { data } = await axios.get(`https://pokeapi.co/api/v2/type/${type}`);
-    console.log(data);
     return data.pokemon.map((poke) => poke.pokemon);
   } catch (err) {
-    console.error(err);
-    return {};
+    if (err.response.status === 404) {
+      throw new Error("Type not found");
+    } else {
+      console.error(err);
+      return {};
+    }
   }
 };
 
-export { getPokemonByNameId, getPokemonByType };
+const getPokemonByAbility = async (ability) => {
+  try {
+    const { data } = await axios.get(
+      `https://pokeapi.co/api/v2/ability/${ability}`
+    );
+    console.log(data);
+    return data.pokemon.map((poke) => poke.pokemon);
+  } catch (err) {
+    if (err.response.status === 404) {
+      throw new Error("Ability not found");
+    } else {
+      console.error(err);
+      return {};
+    }
+  }
+};
+
+export { getPokemonByNameId, getPokemonByType, getPokemonByAbility };
