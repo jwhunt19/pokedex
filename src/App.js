@@ -1,5 +1,4 @@
 import { useState } from "react";
-import * as pokeAPI from "./services/pokeApi";
 
 import Pokemon from "./components/pokemon/Pokemon";
 import Search from "./components/search/Search";
@@ -13,9 +12,13 @@ function App() {
     <div className="App">
       <Search setPokemon={setPokemon} setPokemonList={setPokemonList} />
       {pokemon.id ? (
-        <Pokemon pokemon={pokemon} />
+        <Pokemon
+          pokemonList={pokemonList}
+          pokemon={pokemon}
+          setPokemon={setPokemon}
+        />
       ) : (
-        <PokemonList pokemonList={pokemonList} />
+        <PokemonList pokemonList={pokemonList} setPokemon={setPokemon} />
       )}
     </div>
   );
