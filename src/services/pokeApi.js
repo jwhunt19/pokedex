@@ -28,10 +28,8 @@ const getPokemonByNameId = async (id) => {
 const getPokemonByType = async (type) => {
   try {
     const { data } = await axios.get(`https://pokeapi.co/api/v2/type/${type}`);
-
-    return data.pokemon.map((poke) => {
-      return poke.pokemon.name;
-    });
+    console.log(data);
+    return data.pokemon.map((poke) => poke.pokemon);
   } catch (err) {
     console.error(err);
     return {};

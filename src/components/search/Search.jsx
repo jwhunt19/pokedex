@@ -1,5 +1,4 @@
 import { useState } from "react";
-import * as pokeAPI from "../../services/pokeApi";
 import * as search from "../../utils/search";
 
 const Search = ({ setPokemon, setPokemonList }) => {
