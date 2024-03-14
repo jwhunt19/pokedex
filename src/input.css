@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO: replace instances of this in code with tailwind vars */
 :root {
   /* Primary Colors */
   --primary-color: #E3350D; /* Buttons, Links, Active */
@@ -48,43 +49,6 @@ body {
   background-color: var(--main-background-color);
   color: var(--primary-font-color);
 }
-
-.button-primary {
-  background-color: var(--primary-color);
-  color: var(--primary-font-color);
-}
-
-.button-secondary {
-  background-color: var(--secondary-color-1);
-  color: var(--primary-font-color);
-}
-
-.alert-success {
-  background-color: var(--success-color);
-  color: var(--primary-font-color);
-}
-
-.alert-error {
-  background-color: var(--error-color);
-  color: var(--primary-font-color);
-}
-
-.alert-warning {
-  background-color: var(--warning-color);
-  color: var(--primary-font-color);
-}
-
-.alert-info {
-  background-color: var(--info-color);
-  color: var(--primary-font-color);
-}
-
-.card {
-  background-color: var(--content-background-color);
-  color: var(--secondary-font-color);
-}
-
-
 
 /* Pokemon List */
 
