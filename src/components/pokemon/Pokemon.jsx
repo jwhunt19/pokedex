@@ -3,7 +3,7 @@ import formatString from "../../utils/formatString";
 
 const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
   return (
-    <div id="pokemon">
+    <div id="pokemon" className="bg-[--content-background-color] mt-10 w-3/4 rounded-xl shadow-md">
       {pokemonList.length > 0 && (
         <button onClick={() => setPokemon({})}>{`<--`}</button>
       )}

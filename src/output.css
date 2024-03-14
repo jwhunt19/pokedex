@@ -571,6 +571,10 @@ video {
   width: 7rem;
 }
 
+.w-3\/4 {
+  width: 75%;
+}
+
 .w-40 {
   width: 10rem;
 }
@@ -644,12 +648,22 @@ video {
   line-height: 1.75rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .text-\[--primary-font-color\] {
   color: var(--primary-font-color);
 }
 
 .text-\[--secondary-font-color\] {
   color: var(--secondary-font-color);
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 :root {
@@ -664,27 +678,34 @@ video {
   /* Clickable Icons, info, progress */
   /* Background Colors */
   --main-background-color: #121212;
-  /* Almost Black */
   --content-background-color: #1E1E1E;
-  /* Deep Gray */
   /* Font Colors */
   --primary-font-color: #FFFFFF;
-  /* White */
   --secondary-font-color: #CCCCCC;
-  /* Light Gray */
   /* Utility Colors */
   --success-color: #388E3C;
-  /* Bulbasaur Green */
   --error-color: #D32F2F;
-  /* Charmander Red */
   --warning-color: #FBC02D;
-  /* Pikachu Yellow */
   --info-color: #1976D2;
-  /* Squirtle Blue */
   /* Accent Colors for Pokémon Types */
-  --water-blue: #6890F0;
-  --fire-red: #F08030;
-  --grass-green: #78C850;
+  --water: #6890F0;
+  --fire: #F08030;
+  --grass: #78C850;
+  --electric: #F8D030;
+  --psychic: #F85888;
+  --ice-blue: #98D8D8;
+  --dragon: #7038F8;
+  --dark: #705848;
+  --fairy: #EE99AC;
+  --normal: #A8A878;
+  --fighting: #C03028;
+  --flying: #A890F0;
+  --poison: #A040A0;
+  --ground: #E0C068;
+  --rock: #B8A038;
+  --bug: #A8B820;
+  --ghost: #705898;
+  --steel: #B8B8D0;
 }
 
 body {
@@ -774,6 +795,6 @@ body {
   outline-offset: 2px;
 }
 
-.active\:bg-\[--secondary-color-2\]:active {
-  background-color: var(--secondary-color-2);
+.active\:bg-\[--primary-color-active\]:active {
+  background-color: var(--primary-color-active);
 }

@@ -97,7 +97,7 @@ const Search = ({ setPokemon, setPokemonList }) => {
         <button
           type="submit"
           onClick={handleSearch}
-          className="bg-[--primary-color] rounded-xl w-20 ml-5 border border-[--secondary-color-1] hover:bg-[--secondary-color-1] active:bg-[--secondary-color-2]"
+          className="bg-[--primary-color] text-[--primary-font-color] rounded-xl w-20 ml-5 border border-[--secondary-color-1] hover:bg-[--secondary-color-1] active:bg-[--primary-color-active] font-bold"
         >
           search
         </button>
