@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --primary-color: #E3350D; /* Buttons, Links, Active */
+  --primary-color-active: #C12F0A; /* on click */
+  --secondary-color-1: #F5AC78; /* Secondary Buttons, Hover, Highlight */
+  --secondary-color-2: #4E82B4; /* Clickable Icons, info, progress */
+
+  /* Background Colors */
+  --main-background-color: #121212; /* Almost Black */
+  --content-background-color: #1E1E1E; /* Deep Gray */
+
+  /* Font Colors */
+  --primary-font-color: #FFFFFF; /* White */
+  --secondary-font-color: #CCCCCC; /* Light Gray */
+
+  /* Utility Colors */
+  --success-color: #388E3C; /* Bulbasaur Green */
+  --error-color: #D32F2F; /* Charmander Red */
+  --warning-color: #FBC02D; /* Pikachu Yellow */
+  --info-color: #1976D2; /* Squirtle Blue */
+
+  /* Accent Colors for Pokémon Types */
+  --water-blue: #6890F0;
+  --fire-red: #F08030;
+  --grass-green: #78C850;
+}
+
+body {
+  background-color: var(--main-background-color);
+  color: var(--primary-font-color);
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: var(--primary-font-color);
+}
+
+.button-secondary {
+  background-color: var(--secondary-color-1);
+  color: var(--primary-font-color);
+}
+
+.alert-success {
+  background-color: var(--success-color);
+  color: var(--primary-font-color);
+}
+
+.alert-error {
+  background-color: var(--error-color);
+  color: var(--primary-font-color);
+}
+
+.alert-warning {
+  background-color: var(--warning-color);
+  color: var(--primary-font-color);
+}
+
+.alert-info {
+  background-color: var(--info-color);
+  color: var(--primary-font-color);
+}
+
+.card {
+  background-color: var(--content-background-color);
+  color: var(--secondary-font-color);
+}
+
+
+
+/* Pokemon List */
+
+/* .pokelist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  max-width: 1000px;
+}
+
+.pokelist-mon {
+  list-style-type: none;
+  text-align: center;
+  width: 150px;
+  height: 130px;
+  border-radius: 10px;
+  box-shadow: -3px 3px 10px black;
+  background-color: #6e499f;
+}
+
+.pokelist-mon img,
+.pokelist-mon p {
+  background-color: transparent;
+}
+
+.pokelist-mon:hover {
+  background-color: #40295d;
+}
+
+.pokelist-mon p {
+  color: black;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.pokelist-mon img {
+  max-width: 100px;
+} */

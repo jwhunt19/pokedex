@@ -16,6 +16,7 @@ const Search = ({ setPokemon, setPokemonList }) => {
     setTimeout(() => setError(""), 3000);
   };
 
+  // TODO: move this to a utils file
   const handleSearch = (e) => {
     e.preventDefault();
     switch (searchOption) {
@@ -54,9 +55,10 @@ const Search = ({ setPokemon, setPokemonList }) => {
 
   return (
     <>
-      <form id="search">
+      <form id="search" className="mt-10 flex">
         {searchOption === "generation" ? (
           <select
+            className="text-[--primary-font-color] bg-[--content-background-color] w-40 h-8 text-xl pl-2 pb-1 rounded-s-md focus:outline-none"
             value={generation}
             onChange={(e) => {
               setGeneration(e.target.value);
@@ -75,24 +77,28 @@ const Search = ({ setPokemon, setPokemonList }) => {
         ) : (
           <input
             type="text"
-            placeholder={`search by ${
-              searchOption === "name/id" ? "name or id" : searchOption
-            }...`}
+            placeholder={`search by ${searchOption}...`}
             value={input}
             onChange={handleInput}
+            className="text-[--primary-font-color] bg-[--content-background-color] w-40 h-8 text-l pl-2 pb-1 rounded-s-md focus:outline-none"
           ></input>
         )}
 
         <select
           value={searchOption}
           onChange={(e) => setSearchOption(e.target.value)}
+          className="text-[--secondary-font-color] bg-[--content-background-color] text-center w-28 h-8 text-l pb-1 rounded-e-md focus:outline-none border-l border-gray-700"
         >
           <option value="name/id">Name / ID</option>
           <option value="type">Type</option>
           <option value="ability">Ability</option>
           <option value="generation">Generation</option>
         </select>
-        <button type="submit" onClick={handleSearch}>
+        <button
+          type="submit"
+          onClick={handleSearch}
+          className="bg-[--primary-color] rounded-xl w-20 ml-5 border border-[--secondary-color-1] hover:bg-[--secondary-color-1] active:bg-[--secondary-color-2]"
+        >
           search
         </button>
       </form>
