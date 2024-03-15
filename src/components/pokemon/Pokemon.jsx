@@ -1,12 +1,12 @@
 import Stat from "./Stat";
 import formatString from "../../utils/formatString";
 import { useEffect, useState } from "react";
+import Evolutions from "./Evolutions";
 
 const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
   const [abilities, setAbilities] = useState({});
 
-  console.log(pokemon)
-
+  // TODO: planned feature - link to an abilities page
   const formatAbilities = (abilities) => {
     const abilitySet = new Set(abilities);
     const uniqueAbilities = [...abilitySet];
@@ -55,6 +55,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
         {pokemon.types.map((type) => {
           return (
             <p
+              key={type}
               className={`bg-${type} w-24 text-center font-bold uppercase rounded-lg border-2 border-black`}
             >
               {type}
@@ -81,6 +82,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
           return <Stat key={i} stat={stat} value={pokemon.stats[stat]} />;
         })}
       </div>
+      <Evolutions id={pokemon.id} />
     </div>
   );
 };

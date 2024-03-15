@@ -1,4 +1,5 @@
 const shapeData = (data) => {
+
   const shapedData = {
     id: data.id,
     name: data.species.name,

@@ -8,11 +8,13 @@ const PokemonList = ({ pokemonList, setPokemon }) => {
 
   const buildImgUrl = (baseURL) => {
     if (baseURL.length > 40) {
+      // for pokemon-species url
       return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${baseURL.slice(
         42,
         -1
       )}.png`;
     } else {
+      // for pokemon url
       return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${baseURL.slice(
         34,
         -1
