@@ -58,7 +58,7 @@ const Search = ({ setPokemon, setPokemonList }) => {
       <form id="search" className="mt-10 flex">
         {searchOption === "generation" ? (
           <select
-            className="text-[--primary-font-color] bg-[--content-background-color] w-40 h-8 text-l pl-2 pb-1 rounded-s-md focus:outline-none"
+            className="text-font-primary bg-content-bg w-40 h-8 text-l pl-2 pb-1 rounded-s-md focus:outline-none"
             value={generation}
             onChange={(e) => {
               setGeneration(e.target.value);
@@ -80,14 +80,14 @@ const Search = ({ setPokemon, setPokemonList }) => {
             placeholder={`search by ${searchOption}...`}
             value={input}
             onChange={handleInput}
-            className="text-[--primary-font-color] bg-[--content-background-color] w-40 h-8 text-l pl-2 pb-1 rounded-s-md focus:outline-none"
+            className="text-font-primary bg-content-bg w-40 h-8 text-l pl-2 pb-1 rounded-s-md focus:outline-none"
           ></input>
         )}
 
         <select
           value={searchOption}
           onChange={(e) => setSearchOption(e.target.value)}
-          className="text-[--secondary-font-color] bg-[--content-background-color] text-center w-28 h-8 text-l rounded-e-md focus:outline-none border-l border-gray-700"
+          className="text-font-secondary bg-content-bg text-center w-28 h-8 text-l rounded-e-md focus:outline-none border-l border-gray-700"
         >
           <option value="name/id">Name / ID</option>
           <option value="type">Type</option>
@@ -97,7 +97,7 @@ const Search = ({ setPokemon, setPokemonList }) => {
         <button
           type="submit"
           onClick={handleSearch}
-          className="bg-[--primary-color] text-[--primary-font-color] rounded-xl w-20 ml-5 border border-[--secondary-color-1] hover:bg-[--secondary-color-1] active:bg-[--primary-color-active] font-bold"
+          className="bg-primary text-font-primary rounded-xl w-20 ml-5 border border-secondary-1 hover:bg-secondary-1 active:bg-primary-active font-bold"
         >
           search
         </button>

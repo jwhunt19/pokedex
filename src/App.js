@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App w-1/2 m-auto flex flex-col items-center font-pokedex">
-      <h1 className="text-[--primary-font-color] text-4xl mt-5">Pokedex Search</h1>
+      <h1 className="text-font-primary text-4xl mt-5">Pokedex Search</h1>
       <Search setPokemon={setPokemon} setPokemonList={setPokemonList} />
       {pokemon.id ? (
         <Pokemon

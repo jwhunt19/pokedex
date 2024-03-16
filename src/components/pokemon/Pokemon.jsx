@@ -30,7 +30,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
   return (
     <div
       id="pokemon"
-      className="bg-[--content-background-color] mt-10 w-3/4 rounded-xl shadow-md flex flex-col"
+      className="bg-content-bg mt-10 w-3/4 rounded-xl shadow-md flex flex-col"
     >
       {pokemonList.length > 0 && (
         <button
@@ -42,7 +42,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
       )}
       <div className="flex justify-center mt-5 gap-2 items-center">
         <p className="text-2xl">{formatString(pokemon.name)}</p>
-        <p className="text-[--secondary-font-color]">{`#${pokemon.id}`}</p>
+        <p className="text-font-secondary">{`#${pokemon.id}`}</p>
       </div>
       <img
         src={pokemon.sprite}
