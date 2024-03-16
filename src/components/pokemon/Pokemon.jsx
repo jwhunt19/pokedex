@@ -71,7 +71,9 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
         </p>
         <div className="flex justify-center gap-4">
           {Object.keys(abilities).map((key) => (
-            <p key={key}>{abilities[key]}</p>
+            <p className="whitespace-nowrap" key={key}>
+              {abilities[key]}
+            </p>
           ))}
         </div>
       </div>
