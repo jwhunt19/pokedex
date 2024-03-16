@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getEvolutionChain } from "../../services/pokeApi";
 import EvolutionNode from "./EvolutionNode";
 
-const Evolutions = ({ id }) => {
+const Evolutions = ({ id, setPokemon }) => {
   const [chain, setChain] = useState(null);
 
   useEffect(() => {
@@ -19,7 +19,9 @@ const Evolutions = ({ id }) => {
     fetchChain(id);
   }, [id]);
 
-  return <>{chain && <EvolutionNode stage={chain} />}</>;
+  return (
+    <>{chain && <EvolutionNode stage={chain} setPokemon={setPokemon} />}</>
+  );
 };
 
 export default Evolutions;

@@ -82,7 +82,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
           return <Stat key={i} stat={stat} value={pokemon.stats[stat]} />;
         })}
       </div>
-      <Evolutions id={pokemon.id} />
+      <Evolutions id={pokemon.id} setPokemon={setPokemon} />
     </div>
   );
 };

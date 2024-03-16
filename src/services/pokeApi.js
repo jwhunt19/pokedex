@@ -75,8 +75,8 @@ const getPokemonByGeneration = async (generation) => {
 };
 
 const getEvolutionChain = async (id) => {
-  if (localStorage.getItem(id)) {
-    return JSON.parse(localStorage.getItem(id));
+  if (localStorage.getItem(`chain-${id}`)) {
+    return JSON.parse(localStorage.getItem(`chain-${id}`));
   } else {
     try {
       const { data } = await axios.get(
@@ -87,8 +87,8 @@ const getEvolutionChain = async (id) => {
         data.evolution_chain.url
       );
 
-      localStorage.setItem(id, JSON.stringify(evolutionChain.chain));
-      
+      localStorage.setItem(`chain-${id}`, JSON.stringify(evolutionChain.chain));
+
       return evolutionChain.chain;
     } catch (err) {
       if (err.response.status === 404) {
