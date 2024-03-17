@@ -11,6 +11,7 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
       return obj;
     }, {});
 
+    // TODO: add icon for level up, trade, shed, and other with hover details
     const handleTrigger = (trigger) => {
       switch (trigger) {
         case "level-up":
@@ -26,6 +27,7 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
       }
     };
 
+    // TODO: add an item lookup for held_item and item
     const methodsMap = {
       item: methodInfo.item?.name ? formatString(methodInfo.item.name) : null,
       trigger: handleTrigger(methodInfo.trigger.name),
@@ -74,19 +76,21 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
 
     method = methods.join(" + ");
 
+    // TODO: after doing the above, could map over the method, each having its own
+    // jsx element with a hover tooltip for more details
     return (
-      <div className="text-center mb-2">
-        <p>|</p>
+      <div className="flex items-center mb-2 text-font-primary">
+        <p>-</p>
         <p>{method}</p>
-        <p>↓</p>
+        <p>→</p>
       </div>
     );
   } else {
     return (
-      <div className="text-center mb-2">
-        <p>|</p>
+      <div className="flex items-center mb-2 text-font-primary">
+        <p>-</p>
         <p>?</p>
-        <p>↓</p>
+        <p>→</p>
       </div>
     );
   }

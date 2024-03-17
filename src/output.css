@@ -535,46 +535,39 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.container {
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
 .m-5 {
   margin: 1.25rem;
 }
 
 .m-auto {
   margin: auto;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .ml-4 {
@@ -589,6 +582,10 @@ video {
   margin-top: 2.5rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -597,24 +594,8 @@ video {
   margin-top: 1.25rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.mb-20 {
-  margin-bottom: 5rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .flex {
@@ -631,6 +612,10 @@ video {
 
 .h-8 {
   height: 2rem;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-1\/2 {
@@ -665,20 +650,72 @@ video {
   width: 10rem;
 }
 
+.w-1\/3 {
+  width: 33.333333%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-64 {
+  width: 16rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
   flex-direction: column;
 }
 
+.place-items-center {
+  place-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .gap-1 {
@@ -709,8 +746,8 @@ video {
   white-space: nowrap;
 }
 
-.rounded-full {
-  border-radius: 9999px;
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .rounded-lg {
@@ -752,9 +789,9 @@ video {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.border-gray-200 {
+.border-border {
   --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  border-color: rgb(224 224 224 / var(--tw-border-opacity));
 }
 
 .border-gray-700 {
@@ -762,19 +799,24 @@ video {
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
-.border-secondary-1 {
-  --tw-border-opacity: 1;
-  border-color: rgb(245 172 120 / var(--tw-border-opacity));
-}
-
 .bg-bug {
   --tw-bg-opacity: 1;
   background-color: rgb(168 184 32 / var(--tw-bg-opacity));
 }
 
+.bg-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 115 232 / var(--tw-bg-opacity));
+}
+
 .bg-content-bg {
   --tw-bg-opacity: 1;
-  background-color: rgb(30 30 30 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-content-bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 240 254 / var(--tw-bg-opacity));
 }
 
 .bg-dark {
@@ -842,11 +884,6 @@ video {
   background-color: rgb(160 64 160 / var(--tw-bg-opacity));
 }
 
-.bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(227 53 13 / var(--tw-bg-opacity));
-}
-
 .bg-psychic {
   --tw-bg-opacity: 1;
   background-color: rgb(248 88 136 / var(--tw-bg-opacity));
@@ -857,11 +894,6 @@ video {
   background-color: rgb(184 160 56 / var(--tw-bg-opacity));
 }
 
-.bg-secondary-2 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(78 130 180 / var(--tw-bg-opacity));
-}
-
 .bg-steel {
   --tw-bg-opacity: 1;
   background-color: rgb(184 184 208 / var(--tw-bg-opacity));
@@ -870,6 +902,14 @@ video {
 .bg-water {
   --tw-bg-opacity: 1;
   background-color: rgb(104 144 240 / var(--tw-bg-opacity));
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .pb-1 {
@@ -906,14 +946,19 @@ video {
   text-transform: uppercase;
 }
 
-.text-font-primary {
+.text-button-text {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-font-primary {
+  --tw-text-opacity: 1;
+  color: rgb(65 79 107 / var(--tw-text-opacity));
+}
+
 .text-font-secondary {
   --tw-text-opacity: 1;
-  color: rgb(204 204 204 / var(--tw-text-opacity));
+  color: rgb(115 123 125 / var(--tw-text-opacity));
 }
 
 .shadow-md {
@@ -927,13 +972,11 @@ video {
 }
 
 :root {
-  --main-background-color: #121212;
-  --primary-font-color: #FFFFFF;
+  --main-background-color: #f5f5f5;
 }
 
 body {
   background-color: var(--main-background-color);
-  color: var(--primary-font-color);
 }
 
 /* Pokemon List */
@@ -982,14 +1025,9 @@ body {
   cursor: pointer;
 }
 
-.hover\:bg-blue-500:hover {
+.hover\:bg-button-hover:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-secondary-1:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 172 120 / var(--tw-bg-opacity));
+  background-color: rgb(87 161 248 / var(--tw-bg-opacity));
 }
 
 .focus\:outline-none:focus {
@@ -997,12 +1035,7 @@ body {
   outline-offset: 2px;
 }
 
-.active\:bg-blue-700:active {
+.active\:bg-button-active:active {
   --tw-bg-opacity: 1;
-  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
-}
-
-.active\:bg-primary-active:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(193 47 10 / var(--tw-bg-opacity));
+  background-color: rgb(23 90 182 / var(--tw-bg-opacity));
 }

@@ -16,8 +16,8 @@ const Stat = ({ stat, value }) => {
 
   return (
     <>
-      <p className="odd:font-bold">{formatStat(stat)}</p>
-      <p>{value}</p>
+      <p className="odd:font-bold text-font-primary">{formatStat(stat)}</p>
+      <p className="text-font-secondary">{value}</p>
     </>
   );
 };
