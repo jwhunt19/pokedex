@@ -102,6 +102,7 @@ const Search = ({ setPokemon, setPokemonList }) => {
           search
         </button>
       </form>
+      {/* TODO: make warning look better */}
       {error ? <p>{error}</p> : ""}
     </>
   );
