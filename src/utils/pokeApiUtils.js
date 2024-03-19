@@ -46,6 +46,7 @@ const names = {
   giratina: "giratina-altered",
   shaymin: "shaymin-land",
   wormadam: "wormadam-plant",
+  urshifu: "892",
 };
 
 const nameCorrection = (name) => {
