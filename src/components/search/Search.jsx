@@ -16,7 +16,6 @@ const Search = ({ setPokemon, setPokemonList }) => {
     setTimeout(() => setError(""), 3000);
   };
 
-  // TODO: move this to a utils file
   const handleSearch = (e) => {
     e.preventDefault();
     switch (searchOption) {
@@ -55,7 +54,7 @@ const Search = ({ setPokemon, setPokemonList }) => {
 
   return (
     <>
-      <form id="search" className="mt-10 flex">
+      <form id="search" className="mt-10 flex relative">
         {searchOption === "generation" ? (
           <select
             className="text-font-primary bg-content-bg w-40 h-8 text-l pl-2 pb-1 rounded-s-md focus:outline-none"
@@ -101,9 +100,12 @@ const Search = ({ setPokemon, setPokemonList }) => {
         >
           search
         </button>
+        {error && (
+          <div className="absolute left-0 right-0 mt-10 bg-red-500 text-white py-2 px-4 rounded-md shadow-lg">
+            {error}
+          </div>
+        )}
       </form>
-      {/* TODO: make warning look better */}
-      {error ? <p>{error}</p> : ""}
     </>
   );
 };

@@ -1,5 +1,4 @@
 const shapeData = (data) => {
-
   const shapedData = {
     id: data.id,
     name: data.species.name,
@@ -17,20 +16,20 @@ const shapeData = (data) => {
 };
 
 const names = {
-  "mrmime": "mr-mime",
-  "mimejr": "mime-jr",
-  "mrrime": "mr-rime",
-  "typenull": "type-null",
-  "tapukoko": "tapu-koko",
-  "tapulele": "tapu-lele",
-  "tapubulu": "tapu-bulu",
-  "tapufini": "tapu-fini",
-  "hooh": "ho-oh",
+  mrmime: "mr-mime",
+  mimejr: "mime-jr",
+  mrrime: "mr-rime",
+  typenull: "type-null",
+  tapukoko: "tapu-koko",
+  tapulele: "tapu-lele",
+  tapubulu: "tapu-bulu",
+  tapufini: "tapu-fini",
+  hooh: "ho-oh",
   "farfetch'd": "farfetchd",
   "sirfetch'd": "sirfetchd",
-  "deoxys": "deoxys-normal",
-  "darmanitan": "darmanitan-standard",
-}
+  deoxys: "deoxys-normal",
+  darmanitan: "darmanitan-standard",
+};
 
 const nameCorrection = (name) => {
   if (names[name]) {
