@@ -13,6 +13,12 @@ const formatString = (str) => {
     "ho-oh": "Ho-Oh",
     farfetchd: "Farfetch'd",
     sirfetchd: "Sirfetch'd",
+    "jangmo-o": "Jangmo-o",
+    "hakamo-o": "Hakamo-o",
+    "kommo-o": "Kommo-o",
+    "nidoran-f": "Nidoran♀",
+    "nidoran-m": "Nidoran♂",
+    flabebe: "Flabébé",
   };
 
   // Check if the name is an exception

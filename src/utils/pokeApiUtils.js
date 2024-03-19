@@ -47,6 +47,14 @@ const names = {
   shaymin: "shaymin-land",
   wormadam: "wormadam-plant",
   urshifu: "892",
+  "nidoran male": "nidoran-m",
+  "nidoran female": "nidoran-f",
+  nidoranm: "nidoran-m",
+  nidoranf: "nidoran-f",
+  nidoran: "nidoran-m",
+  jangmoo: "jangmo-o",
+  hakamoo: "hakamo-o",
+  komoo: "kommo-o",
 };
 
 const nameCorrection = (name) => {
