@@ -27,6 +27,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
     setAbilities(formatAbilities(pokemon.abilities));
   }, [pokemon.abilities]);
 
+  // TODO: consider adding flavor text
   return (
     <div
       id="pokemon"
