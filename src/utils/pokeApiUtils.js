@@ -29,6 +29,23 @@ const names = {
   "sirfetch'd": "sirfetchd",
   deoxys: "deoxys-normal",
   darmanitan: "darmanitan-standard",
+  basculin: "basculin-red-striped",
+  tornadus: "tornadus-incarnate",
+  thundurus: "thundurus-incarnate",
+  landorus: "landorus-incarnate",
+  keldeo: "keldeo-ordinary",
+  meloetta: "meloetta-aria",
+  meowstic: "meowstic-male",
+  aegislash: "aegislash-shield",
+  pumpkaboo: "pumpkaboo-average",
+  gourgeist: "gourgeist-average",
+  oricorio: "oricorio-baile",
+  wishiwashi: "wishiwashi-solo",
+  minior: "minior-red-meteor",
+  mimikyu: "mimikyu-disguised",
+  giratina: "giratina-altered",
+  shaymin: "shaymin-land",
+  wormadam: "wormadam-plant",
 };
 
 const nameCorrection = (name) => {
