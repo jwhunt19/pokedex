@@ -76,7 +76,22 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
         />
       ) : null,
       trigger: handleTrigger(methodInfo.trigger.name),
-      gender: methodInfo.gender === 1 ? "Female" : "Male",
+      gender:
+        methodInfo.gender === 1 ? (
+          <img
+            src="/images/female.png"
+            alt="Female"
+            className="w-4 h-4"
+            title="Female"
+          />
+        ) : (
+          <img
+            src="/images/male.png"
+            alt="Male"
+            className="w-4 h-4"
+            title="Male"
+          />
+        ),
       held_item: methodInfo.held_item?.name ? (
         <>
           <span>Hold </span>
