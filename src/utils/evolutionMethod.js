@@ -48,13 +48,25 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
               title="Spin player while in party"
             />
           );
+        case "recoil-damage":
+          return "Recoil Damage";
+        case "take-damage":
+          return "Take Damage";
+        case "three-critical-hits":
+          return <p title="3 critical hits in a single battle">3 Crit</p>;
+        case "tower-of-darkness":
+          return "Train @ Tower of Darkness/Water";
+        case "agile-style-move":
+          return "+ Agile Style";
+        case "strong-style-move":
+          return "+ Strong Style";
         case "other":
           return (
             <img
               src="/images/missing_img.png"
               alt="Other"
               className="w-6 h-6"
-              title="Other"
+              title="Missing info"
             />
           );
         default:
@@ -107,7 +119,9 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
           />
         </>
       ) : null,
-      known_move: methodInfo.known_move?.name,
+      known_move: methodInfo.known_move?.name
+        ? formatString(methodInfo.known_move.name)
+        : null,
       known_move_type: methodInfo.known_move_type?.name
         ? `${formatString(methodInfo.known_move_type.name)} Move`
         : null,
@@ -133,8 +147,12 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
         />
       ),
       needs_overworld_rain: "Rain",
-      party_species: methodInfo.party_species?.name,
-      party_type: methodInfo.party_type?.name,
+      party_species: methodInfo.party_species?.name
+        ? `${formatString(methodInfo.party_species.name)} in party`
+        : null,
+      party_type: methodInfo.party_type?.name
+        ? `${formatString(methodInfo.party_type.name)} type in party`
+        : null,
       relative_physical_stats:
         methodInfo.relative_physical_stats > 0 ? "A>D" : "D>A",
       time_of_day:
@@ -153,7 +171,9 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
             title="Night"
           />
         ),
-      trade_species: methodInfo.trade_species?.name,
+      trade_species: methodInfo.trade_species?.name
+        ? `${formatString(methodInfo.trade_species.name)} +`
+        : null,
       turn_upside_down: "Upside Down",
     };
 
@@ -181,7 +201,13 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
     return (
       <div className="flex items-center mb-2 text-font-primary">
         <p>-</p>
-        {methods.map((m) => m)}
+        {methods.map((m, index) => (
+          <div key={index} className="mx-1">
+            {" "}
+            {/* Use mx-1 for horizontal margin, adjust as needed */}
+            {m}
+          </div>
+        ))}
         <p>→</p>
       </div>
     );
