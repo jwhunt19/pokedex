@@ -2,8 +2,6 @@ import React from "react";
 import formatString from "./formatString";
 
 const getEvolutionMethod = ({ evolution_details: details }) => {
-  let method;
-
   if (details.length > 0) {
     const methodInfo = Object.keys(details[0]).reduce((obj, key) => {
       if (details[0][key]) {
@@ -12,7 +10,6 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
       return obj;
     }, {});
 
-    // TODO: add icon for level up, trade, shed, and other with hover details
     const handleTrigger = (trigger) => {
       switch (trigger) {
         case "level-up":
@@ -65,7 +62,6 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
       }
     };
 
-    // TODO: add an item lookup for held_item and item
     const methodsMap = {
       item: methodInfo.item?.name ? (
         <img
