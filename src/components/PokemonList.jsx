@@ -38,7 +38,11 @@ const PokemonList = ({ pokemonList, setPokemon }) => {
     <div className="pokelist-container">
       <ul className="grid grid-cols-5">
         {pokemonList
-          .filter((pokemon) => pokemon.url.slice(34, -1) < 1026)
+          .filter((pokemon) =>
+            pokemon.url.length > 40
+              ? pokemon.url.slice(42, -1) < 1026
+              : pokemon.url.slice(34, -1) < 1026
+          )
           .map((pokemon, index) => (
             <li
               className="active:bg-button-hover hover:cursor-pointer hover:bg-content-bg-secondary hover:border-content-bg shadow-md text-center flex flex-col items-center bg-content-bg border border-content-bg-secondary rounded-2xl m-5 w-32 h-32"
