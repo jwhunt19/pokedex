@@ -1,4 +1,5 @@
 import * as search from "../utils/search";
+import formatString from "../utils/formatString";
 
 const PokemonList = ({ pokemonList, setPokemon }) => {
   const handleImageError = (event) => {
@@ -29,23 +30,30 @@ const PokemonList = ({ pokemonList, setPokemon }) => {
       .catch((err) => console.error(err));
   };
 
+  console.log(pokemonList);
+
+  console.log(pokemonList.filter((p) => p.id < 1025));
+
   return (
     <div className="pokelist-container">
-      <ul className="pokelist">
-        {pokemonList.map((pokemon, index) => (
-          <li
-            className="pokelist-mon"
-            key={index}
-            onClick={() => handlePokemonSelection(pokemon.name)}
-          >
-            <img
-              src={buildImgUrl(pokemon.url)}
-              onError={handleImageError}
-              alt={`${pokemon.name} sprite`}
-            />
-            <p>{pokemon.name}</p>
-          </li>
-        ))}
+      <ul className="grid grid-cols-5">
+        {pokemonList
+          .filter((pokemon) => pokemon.url.slice(34, -1) < 1026)
+          .map((pokemon, index) => (
+            <li
+              className="active:bg-button-hover hover:cursor-pointer hover:bg-content-bg-secondary hover:border-content-bg shadow-md text-center flex flex-col items-center bg-content-bg border border-content-bg-secondary rounded-2xl m-5 w-32 h-32"
+              key={index}
+              onClick={() => handlePokemonSelection(pokemon.name)}
+            >
+              <img
+                src={buildImgUrl(pokemon.url)}
+                onError={handleImageError}
+                alt={`${pokemon.name} sprite`}
+                className="w-3/4"
+              />
+              <p>{formatString(pokemon.name)}</p>
+            </li>
+          ))}
       </ul>
     </div>
   );

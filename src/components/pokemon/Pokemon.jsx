@@ -40,6 +40,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
           &#x2190;
         </button>
       )}
+
       <div className="flex justify-center mt-5 gap-2 items-center">
         <p className="text-2xl text-font-primary">
           {formatString(pokemon.name)}
@@ -81,7 +82,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 m-2 p-3 gap-1 justify-center rounded-2xl bg-content-bg-secondary">
+      <div className="grid grid-cols-6 m-2 p-3 gap-1 justify-center rounded-2xl bg-content-bg-secondary">
         {Object.keys(pokemon.stats).map((stat, i) => {
           return <Stat key={i} stat={stat} value={pokemon.stats[stat]} />;
         })}

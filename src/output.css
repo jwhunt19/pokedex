@@ -567,6 +567,14 @@ video {
   margin: auto;
 }
 
+.m-1 {
+  margin: 0.25rem;
+}
+
+.m-5 {
+  margin: 1.25rem;
+}
+
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -649,6 +657,14 @@ video {
   height: 1.75rem;
 }
 
+.h-24 {
+  height: 6rem;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -701,8 +717,24 @@ video {
   width: 1.75rem;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -739,6 +771,10 @@ video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .self-center {
@@ -800,6 +836,11 @@ video {
 .border-gray-700 {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
+}
+
+.border-content-bg-secondary {
+  --tw-border-opacity: 1;
+  border-color: rgb(232 240 254 / var(--tw-border-opacity));
 }
 
 .bg-bug {
@@ -916,6 +957,10 @@ video {
   padding: 0.75rem;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -992,6 +1037,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -1060,9 +1111,19 @@ body {
   cursor: pointer;
 }
 
+.hover\:border-content-bg:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
 .hover\:bg-button-hover:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(87 161 248 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-content-bg-secondary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 240 254 / var(--tw-bg-opacity));
 }
 
 .focus\:outline-none:focus {
@@ -1073,4 +1134,14 @@ body {
 .active\:bg-button-active:active {
   --tw-bg-opacity: 1;
   background-color: rgb(23 90 182 / var(--tw-bg-opacity));
+}
+
+.active\:bg-blue-900:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+}
+
+.active\:bg-button-hover:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(87 161 248 / var(--tw-bg-opacity));
 }
