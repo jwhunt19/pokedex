@@ -1,7 +1,12 @@
 import * as search from "../../utils/search";
 import getEvolutionMethod from "../../utils/evolutionMethod";
 
-const EvolutionNode = ({ stage, setPokemon, depth = 0 }) => {
+const EvolutionNode = ({
+  stage,
+  setPokemon,
+  depth = 0,
+  multiStage = false,
+}) => {
   const pokedexId = stage.species.url.slice(42, -1);
 
   const handlePokemonSelection = (id) => {
@@ -14,9 +19,9 @@ const EvolutionNode = ({ stage, setPokemon, depth = 0 }) => {
   // TODO: add exception for eevee on styling. should have eevee above and evos below
   return (
     <div
-      className={`flex items-center justify-around mt-2 ${
-        depth === 0 ? "mb-4" : ""
-      }`}
+      className={`flex items-center justify-around ${
+        depth === 0 ? "my-4" : ""
+      } ${multiStage ? "mb-1" : ""}`}
     >
       <div className="flex items-center gap-4">
         {depth > 0 && getEvolutionMethod(stage)}
@@ -34,6 +39,7 @@ const EvolutionNode = ({ stage, setPokemon, depth = 0 }) => {
                 stage={s}
                 setPokemon={setPokemon}
                 depth={depth + 1}
+                multiStage={stage.evolves_to.length > 1}
               />
             ))}
         </div>
