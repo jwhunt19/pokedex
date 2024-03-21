@@ -19,4 +19,7 @@ A Pokedex web application with features that showcase a Pokémon's types, abilit
   npm run start
   ```
 
-- Navigate to http://localhost:3000 in your browser to use the application
+## Usage
+Navigate to http://localhost:3000 in your browser to use the application
+
+![demo](docs/demo.gif)
