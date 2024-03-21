@@ -20,15 +20,15 @@ const EvolutionNode = ({
   return (
     <div
       className={`flex items-center justify-around ${
-        depth === 0 ? "my-4" : ""
+        depth === 0 ? "ml-1 my-2 lg:my-4" : ""
       } ${multiStage ? "mb-1" : ""}`}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-1 lg:gap-4">
         {depth > 0 && getEvolutionMethod(stage)}
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokedexId}.png`}
           alt={stage.species.name}
-          className="w-20 h-20 border-2 border-border rounded-2xl bg-content-bg-secondary hover:cursor-pointer"
+          className="w-16 h-16 lg:w-20 lg:h-20 border-2 border-border rounded-2xl bg-content-bg-secondary hover:cursor-pointer"
           onClick={() => handlePokemonSelection(pokedexId)}
         />
         <div className="flex flex-col items-end">

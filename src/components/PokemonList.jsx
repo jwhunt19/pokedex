@@ -30,13 +30,9 @@ const PokemonList = ({ pokemonList, setPokemon }) => {
       .catch((err) => console.error(err));
   };
 
-  console.log(pokemonList);
-
-  console.log(pokemonList.filter((p) => p.id < 1025));
-
   return (
-    <div className="pokelist-container">
-      <ul className="grid grid-cols-5">
+    <div className="w-full">
+      <ul className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
         {pokemonList
           .filter((pokemon) =>
             pokemon.url.length > 40
@@ -45,7 +41,7 @@ const PokemonList = ({ pokemonList, setPokemon }) => {
           )
           .map((pokemon, index) => (
             <li
-              className="active:bg-button-hover hover:cursor-pointer hover:bg-content-bg-secondary hover:border-content-bg shadow-md text-center flex flex-col items-center bg-content-bg border border-content-bg-secondary rounded-2xl m-5 w-32 h-32"
+              className="active:bg-button-hover hover:cursor-pointer hover:bg-content-bg-secondary hover:border-content-bg shadow-md text-center flex flex-col items-center bg-content-bg border border-content-bg-secondary rounded-2xl m-2 lg:w-32 lg:h-32"
               key={index}
               onClick={() => handlePokemonSelection(pokemon.name)}
             >

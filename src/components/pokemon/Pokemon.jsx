@@ -31,7 +31,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
   return (
     <div
       id="pokemon"
-      className="bg-content-bg my-10 w-full rounded-xl shadow-md flex flex-col"
+      className="bg-content-bg my-10 w-5/6 lg:w-full rounded-xl shadow-md flex flex-col max-w-4xl"
     >
       {pokemonList.length > 0 && (
         <button
@@ -51,7 +51,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
       <img
         src={pokemon.sprite}
         alt={`sprite for ${pokemon.name}`}
-        className="w-1/3 self-center bg-content-bg-secondary m-4 rounded-xl border border-border"
+        className="w-2/3 lg:w-1/3 self-center bg-content-bg-secondary m-4 rounded-xl border border-border"
       />
 
       {/* Types */}
@@ -83,7 +83,7 @@ const Pokemon = ({ pokemonList, pokemon, setPokemon }) => {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-6 m-2 p-3 gap-1 justify-center rounded-2xl bg-content-bg-secondary">
+      <div className="grid grid-cols-4 lg:grid-cols-6 m-2 p-3 gap-1 justify-center rounded-2xl bg-content-bg-secondary">
         {Object.keys(pokemon.stats).map((stat, i) => {
           return <Stat key={i} stat={stat} value={pokemon.stats[stat]} />;
         })}

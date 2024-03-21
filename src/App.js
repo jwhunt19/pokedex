@@ -9,8 +9,10 @@ function App() {
   const [pokemonList, setPokemonList] = useState([]);
 
   return (
-    <div className="App w-1/2 m-auto flex flex-col items-center font-pokedex">
-      <h1 className="text-font-primary text-4xl mt-5">Pokedex Search</h1>
+    <div className="App lg:w-1/2 h-screen m-auto flex flex-col items-center font-pokedex">
+      <h1 className="text-font-primary text-2xl lg:text-4xl mt-5">
+        Pokedex Search
+      </h1>
       <Search setPokemon={setPokemon} setPokemonList={setPokemonList} />
       {pokemon.id ? (
         <Pokemon

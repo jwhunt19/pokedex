@@ -57,7 +57,7 @@ const Search = ({ setPokemon, setPokemonList }) => {
       <form id="search" className="mt-10 flex relative">
         {searchOption === "generation" ? (
           <select
-            className="text-font-primary bg-content-bg w-40 h-8 text-l pl-2 pb-1 rounded-s-md focus:outline-none"
+            className="text-font-primary bg-content-bg w-40 h-8 pl-2 pb-1 rounded-s-md focus:outline-none"
             value={generation}
             onChange={(e) => {
               setGeneration(e.target.value);

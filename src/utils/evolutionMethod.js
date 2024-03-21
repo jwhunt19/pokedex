@@ -201,13 +201,14 @@ const getEvolutionMethod = ({ evolution_details: details }) => {
     return (
       <div className="flex items-center mb-2 text-font-primary">
         <p>-</p>
-        {methods.map((m, index) => (
-          <div key={index} className="mx-1">
-            {" "}
-            {/* Use mx-1 for horizontal margin, adjust as needed */}
-            {m}
-          </div>
-        ))}
+        <div className="flex flex-wrap text-center">
+          {methods.map((m, index) => (
+            <div key={index} className="flex">
+              {" "}
+              {m}
+            </div>
+          ))}
+        </div>
         <p>→</p>
       </div>
     );
